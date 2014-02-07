@@ -1,15 +1,15 @@
 'use strict'; //top of all js file use strict make sure using the latest version of client js
 
-var spacecatApp = angular.module('spacecatApp', []);
+var signApp = angular.module('signApp', []);
 
 // create our controller as a function property
 //connect application to the controller with scope. scope is a place we store resources. where all the data is.
-spacecatApp.controller('CatListCtrl', function($scope){
+signApp.controller('SignCtrl', function($scope){
 	// making the resource
-	$scope.cats = [
+	$scope.signs = [
     { "id": 1,
-      "name": "bigbelly",
-      "bio": "Emerged into consciousness how far away shores of the cosmic ocean Cambrian explosion",
+      "name": "Aries",
+      "bio": "Very forceful confrontational voice, fiercely independent, extremely competitive, freedom-loving, adventurous, enthusiastic, bold, ambitious, athletic, impulsive, reckless, dynamic, powerful, overly-confident, loud, warlike, blunt, hasty, hard-headed, stubborn, strong-willed, hot-tempered, rude, selfish, impulsive, enterprising, a risk-taker, an achiever, tends to act first and think later, the unstoppable force.",
       "color": "white",
       "personality": "relaxed",
       "planets": 2},

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <!-- tell app that it's angular -->
-<html lang="en" ng-app="spacecatApp">
+<html lang="en" ng-app="signApp">
   <head>
     <meta charset="utf-8"/>
-    <title>SpaceCAT! AngularJS Demo</title>
+    <title>What's Your Sign?</title>
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
     <link href='http://fonts.googleapis.com/css?family=Abril+Fatface' rel='stylesheet' type='text/css'>
     <link href="css/app.css" rel="stylesheet"/>
@@ -13,22 +13,26 @@
     
   </head>
  <!-- add controller custom attributes. Will not get access to cats if do not have controller included -->
-  <body ng-controller="CatListCtrl">
+  <body ng-controller="SignCtrl">
     <div class="container-fluid">
       <div class="billions"></div>
       <img id="sagan" src="img/sagan.png"/>
       <div class="jumbo">  
         <h1>Intergalactic Space Cat Registry</h1>
+        <input id="search" type="text" ng-model="query"/>
+        <select ng-model="orderProp">
+          <option value="name">Alphabetical</option>
+          <option value="-planets">Planets Visited</option>
+        </select>
       </div>
-      <div class="cat-container container">
+      <div class="sign-container container">
         <h2> NO CATS YET :((( </h2>
         <ul>
-          <!-- cats go here -->
-          <li ng-repeat="cat in cats" class ="cat">
-            <img ng-src="img/spacecats/{{cat.name}}.jpg"/>
+          <li ng-repeat="sign in signs | filter:query" class ="sign">
+            <img ng-src="img/signs/{{sign.name}}.jpg"/>
             <div class="info">
-              <h3>{{cat.name}}</h3>
-              <p>{{cat.bio}}</p>
+              <h3>{{sign.personality}}</h3>
+              <p>{{sign.bio}}</p>
             </div>
         </ul>
       </div>

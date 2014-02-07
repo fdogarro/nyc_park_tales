@@ -1,13 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- tell app that it's angular -->
+<html lang="en" ng-app="spacecatApp">
   <head>
     <meta charset="utf-8"/>
     <title>SpaceCAT! AngularJS Demo</title>
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
     <link href='http://fonts.googleapis.com/css?family=Abril+Fatface' rel='stylesheet' type='text/css'>
     <link href="css/app.css" rel="stylesheet"/>
+    <!-- add js scripts put angular at the top, because controller needs access to angular -->
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="js/controllers.js"></script>
+    
   </head>
-  <body>
+ <!-- add controller custom attributes. Will not get access to cats if do not have controller included -->
+  <body ng-controller="CatListCtrl">
     <div class="container-fluid">
       <div class="billions"></div>
       <img id="sagan" src="img/sagan.png"/>
@@ -18,6 +24,12 @@
         <h2> NO CATS YET :((( </h2>
         <ul>
           <!-- cats go here -->
+          <li ng-repeat="cat in cats" class ="cat">
+            <img ng-src="img/spacecats/{{cat.name}}.jpg"/>
+            <div class="info">
+              <h3>{{cat.name}}</h3>
+              <p>{{cat.bio}}</p>
+            </div>
         </ul>
       </div>
     </div>

@@ -1,40 +1,40 @@
 <!DOCTYPE html>
-<!-- tell app that it's angular -->
 <html lang="en" ng-app="signApp">
   <head>
     <meta charset="utf-8"/>
-    <title>What's Your Sign?</title>
+    <title>NYC Park Tales</title>
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
     <link href='http://fonts.googleapis.com/css?family=Abril+Fatface' rel='stylesheet' type='text/css'>
     <link href="css/app.css" rel="stylesheet"/>
-    <!-- add js scripts put angular at the top, because controller needs access to angular -->
     <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/jquery/jquery-1.10.2.min.js"></script>
     <script src="js/controllers.js"></script>
-    
+    <script src="js/main.js"></script>
   </head>
- <!-- add controller custom attributes. Will not get access to cats if do not have controller included -->
   <body ng-controller="SignCtrl">
     <div class="container-fluid">
-      <div class="billions"></div>
-      <img id="sagan" src="img/sagan.png"/>
       <div class="jumbo">  
-        <h1>Intergalactic Space Cat Registry</h1>
+        <h1>NYC Park Tales</h1>
         <input id="search" type="text" ng-model="query"/>
         <select ng-model="orderProp">
           <option value="name">Alphabetical</option>
-          <option value="-planets">Planets Visited</option>
+          <option value="borough">Borough</option>
         </select>
       </div>
-      <div class="sign-container container">
-        <h2> NO CATS YET :((( </h2>
+     <!--  <div class="sign-container container"> -->
+       
         <ul>
           <li ng-repeat="sign in signs | filter:query" class ="sign">
-            <img ng-src="img/signs/{{sign.name}}.jpg"/>
-            <div class="info">
-              <h3>{{sign.personality}}</h3>
-              <p>{{sign.bio}}</p>
+            <img ng-src="#"/>
+            <div class="row">
+             <div class="col-md-4">
+            <!-- <div class="info"> -->
+              <h3>{{sign.name}}</h3>
+              <p>{{sign.borough}}</p>
+              <p class="text-shorten">{{sign.content}}</p>
             </div>
         </ul>
+      </div>
       </div>
     </div>
   </body>

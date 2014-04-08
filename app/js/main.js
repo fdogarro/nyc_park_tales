@@ -1,4 +1,6 @@
-// $(document).ready(function(){
-// 	alert("ready");
+$(document).ready(function(){
+	$('p:contains("<p>")').html('');
+	});
+	
 
 // });

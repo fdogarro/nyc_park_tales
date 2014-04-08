@@ -15,27 +15,25 @@
     <div class="container-fluid">
       <div class="jumbo">  
         <h1>NYC Park Tales</h1>
+        <p>The stories behind some of New York's Most Hidden Treasures.</p>
         <input id="search" type="text" ng-model="query"/>
         <select ng-model="orderProp">
           <option value="name">Alphabetical</option>
           <option value="borough">Borough</option>
         </select>
       </div>
-     <!--  <div class="sign-container container"> -->
-       
+      <div class="sign-container container">
+        <!-- <div class="col-md-10"> -->
         <ul>
           <li ng-repeat="sign in signs | filter:query" class ="sign">
             <img ng-src="#"/>
-            <div class="row">
-             <div class="col-md-4">
-            <!-- <div class="info"> -->
-              <h3>{{sign.name}}</h3>
+            <div class="info">
+              <h4>{{sign.name}}</h4>
               <p>{{sign.borough}}</p>
               <p class="text-shorten">{{sign.content}}</p>
             </div>
         </ul>
-      </div>
-      </div>
+     <!--  </div> -->
     </div>
   </body>
 </html>
